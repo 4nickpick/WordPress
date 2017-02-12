@@ -1,0 +1,5 @@
+.idea*
+wpcs*
+.htaccess
+_patches*
+wp-config.php
