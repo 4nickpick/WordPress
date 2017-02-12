@@ -1,2 +1,4 @@
 .idea*
 /wpcs*
+.htaccess
+wp-config.php
