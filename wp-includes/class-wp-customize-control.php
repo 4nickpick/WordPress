@@ -77,24 +77,32 @@ class WP_Customize_Control {
 	public $capability;
 
 	/**
+	 * Order priority to load the control.
+	 *
 	 * @access public
 	 * @var int
 	 */
 	public $priority = 10;
 
 	/**
+	 * Section the control belongs to.
+	 *
 	 * @access public
 	 * @var string
 	 */
 	public $section = '';
 
 	/**
+	 * Label for the control.
+	 *
 	 * @access public
 	 * @var string
 	 */
 	public $label = '';
 
 	/**
+	 * Description for the control.
+	 *
 	 * @access public
 	 * @var string
 	 */
@@ -102,6 +110,7 @@ class WP_Customize_Control {
 
 	/**
 	 * @todo: Remove choices
+	 * List of choices for 'radio' or 'select' type controls, where values are the keys, and labels are the values.
 	 *
 	 * @access public
 	 * @var array
@@ -109,6 +118,10 @@ class WP_Customize_Control {
 	public $choices = array();
 
 	/**
+	 * List of custom input attributes for control output, where attribute names are the keys and values are the values.
+	 *
+	 * Not used for 'checkbox', 'radio', 'select', 'textarea', or 'dropdown-pages' control types.
+	 *
 	 * @access public
 	 * @var array
 	 */

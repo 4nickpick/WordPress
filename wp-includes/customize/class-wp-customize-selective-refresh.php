@@ -94,9 +94,11 @@ final class WP_Customize_Selective_Refresh {
 	 * @param array                       $args {
 	 *     Optional. Array of properties for the new Partials object. Default empty array.
 	 *
-	 *     @type string   $type                  Type of the partial to be created.
+	 *     @type string   $type                  Type of the partial to be created. Default 'default'.
 	 *     @type string   $selector              The jQuery selector to find the container element for the partial.
-	 *     @type array    $settings              IDs for settings tied to the partial.
+	 *     @type array    $settings              IDs for settings tied to the partial. If undefined, `$id` will be used.
+	 *                                           IDs in the array correspond to the ID of a registered instance
+	 *                                           of `WP_Customize_Setting`
 	 *     @type string   $primary_setting       The ID for the setting that this partial is primarily responsible for
 	 *                                           rendering. If not supplied, it will default to the ID of the first setting.
 	 *     @type string   $capability            Capability required to edit this partial.
@@ -107,10 +109,10 @@ final class WP_Customize_Selective_Refresh {
 	 *                                           The callback can either echo the partial or return the partial as a string,
 	 *                                           or return false if error.
 	 *     @type bool     $container_inclusive   Whether the container element is included in the partial, or if only
-	 *                                           the contents are rendered.
+	 *                                           the contents are rendered. Default false.
 	 *     @type bool     $fallback_refresh      Whether to refresh the entire preview in case a partial cannot be refreshed.
 	 *                                           A partial render is considered a failure if the render_callback returns
-	 *                                           false.
+	 *                                           false. Default true.
 	 * }
 	 *
 	 * @return WP_Customize_Partial             The instance of the panel that was added.

@@ -40,7 +40,7 @@ class WP_Customize_Setting {
 	/**
 	 * Capability required to edit this setting.
 	 *
-	 * @var string
+	 * @var string|array
 	 */
 	public $capability = 'edit_theme_options';
 
@@ -51,16 +51,47 @@ class WP_Customize_Setting {
 	 * @var string
 	 */
 	public $theme_supports  = '';
+
+	/**
+	 * The default value for the setting.
+	 *
+	 * @access public
+	 * @var string
+	 */
 	public $default         = '';
+
+	/**
+	 * Options for rendering the live preview of changes in Theme Customizer.
+	 *
+	 * Set this value to 'postMessage' to enable a custom Javascript handler to render changes to this setting
+	 * as opposed to reloading the whole page.
+	 *
+	 * @see https://codex.wordpress.org/Theme_Customization_API
+	 *
+	 * @access public
+	 * @var string
+	 */
 	public $transport       = 'refresh';
 
 	/**
-	 * Server-side sanitization callback for the setting's value.
+	 * Server-side validation callback for the setting's value.
 	 *
-	 * @var callback
+	 * @var callable
 	 */
 	public $validate_callback    = '';
+
+	/**
+	 * Callback to filter a Customize setting value in un-slashed form.
+	 *
+	 * @var callable
+	 */
 	public $sanitize_callback    = '';
+
+	/**
+	 * Callback to filter a Customize setting value for use in Javascript.
+	 *
+	 * @var callable
+	 */
 	public $sanitize_js_callback = '';
 
 	/**
